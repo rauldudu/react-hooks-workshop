@@ -1,0 +1,24 @@
+.checkout {
+  table {
+    margin-bottom: 4px;
+    max-width: 300px;
+    width: 100%;
+  }
+
+  th,
+  td {
+    border: 1px solid black;
+    text-align: center;
+  }
+
+  th {
+    background: #cccccc;
+  }
+
+  .checkout__total {
+    td,
+    td {
+      border: 0;
+    }
+  }
+}

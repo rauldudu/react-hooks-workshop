@@ -1,0 +1,37 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "title": "Men's Belt",
+      "description": "Autolock's No Hole Belt provides 38 unique adjustments for an extremely comfortable fit. Easy removable buckle allows you to use a simple scissor to cut the ratchet belt to your ideal size to give a primmer and custom-tailored appearance! Join the Autolock belt fashion mission and our awesome belts With removable buckles!",
+      "price": 23.99
+    },
+    {
+      "id": 2,
+      "title": "JETech Case for Apple iPhone",
+      "description": "Made with PC and TPU. Slim design. Ultra transparent and scratch-resistant back",
+      "price": 13.99
+    },
+    {
+      "id": 3,
+      "title": "iRobot Roomba 690 Robot",
+      "description": "Patented Dirt Detect sensors alert Roomba to work harder on concentrated areas of dirt, such as high traffic zones of your home",
+      "price": 379.98
+    },
+    {
+      "id": 4,
+      "title": "Fire TV Stick with Alexa Voice Remote",
+      "description": "Fire TV Stick lets you experience thousands of channels, apps, and Alexa skills, plus millions of websites like Facebook and Reddit",
+      "price": 49.99
+    },
+    {
+      "id": 5,
+      "title": "Stainless Steel Digital Kitchen Scale",
+      "description": "Stainless steel digital kitchen scale with widescreen LCD screen",
+      "price": 15.25
+    }
+  ],
+  "activities": [
+
+  ]
+}
