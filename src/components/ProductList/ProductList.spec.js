@@ -20,33 +20,21 @@ describe("ProductList", () => {
     push: jest.fn()
   };
 
-  // getByTestId, toBeVisible
   it("should show a spinner while loading the products", () => {
-    const { getByTestId } = render(
-      <ProductList history={history} isLoading={true} />
-    );
+    const { getByTestId } = render(<ProductList history={history} />);
 
-    expect(getByTestId("spinner")).toBeVisible();
+    // TODO
   });
 
-  // getByText, toBeVisible
   it("should list the items by product title", () => {
-    const { getByText } = render(
-      <ProductList history={history} products={products} />
-    );
+    const { getByText } = render(<ProductList history={history} />);
 
-    expect(getByText(/iRobot/i)).toBeVisible();
-    expect(getByText(/JETech Case/i)).toBeVisible();
+    // TODO
   });
 
-  // getByText, toHaveBeenCalledWith
   it("should navigate to the correct url when clicking on the title", () => {
-    const { getByText } = render(
-      <ProductList history={history} products={products} />
-    );
+    const { getByText } = render(<ProductList history={history} />);
 
-    fireEvent.click(getByText("iRobot"));
-
-    expect(history.push).toHaveBeenCalledWith("/product/1");
+    // TODO
   });
 });

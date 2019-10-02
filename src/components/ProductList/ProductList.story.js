@@ -34,14 +34,14 @@ const props = {
   fetchProducts: action("fetch products")
 };
 
-storiesOf("ProductList", module).add("Details", () => (
-  <ProductList {...props} />
-));
+storiesOf("ProductList", module).add("Details", () => {
+  // TODO
+});
 
-storiesOf("ProductList", module).add("No products", () => (
-  <ProductList {...props} products={[]} />
-));
+storiesOf("ProductList", module).add("No products", () => {
+  // TODO
+});
 
-storiesOf("ProductList", module).add("Loading", () => (
-  <ProductList {...props} isLoading products={null} />
-));
+storiesOf("ProductList", module).add("Loading", () => {
+  // TODO
+});

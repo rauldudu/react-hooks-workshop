@@ -6,7 +6,22 @@ import useTracker from "../../helpers/useTracker";
 
 import "./ProductList.scss";
 
-export function ProductList({ history, isLoading, products }) {
+export default function ProductList({ history }) {
+  const [isLoading, setIsLoading] = React.useState(true);
+  const [products, setProducts] = React.useState([]);
+
+  useTracker("ProductList");
+
+  React.useEffect(function() {
+    const promise = makeTrashable(fetchProducts());
+    promise.then(res => {
+      setIsLoading(false);
+      setProducts(res);
+    });
+
+    return () => promise.trash();
+  }, []);
+
   if (isLoading) {
     return <Spinner data-testid="spinner" />;
   }
@@ -35,23 +50,4 @@ export function ProductList({ history, isLoading, products }) {
       )}
     </div>
   );
-}
-
-export default function ProductListWrapper(props) {
-  const [isLoading, setIsLoading] = React.useState(true);
-  const [products, setProducts] = React.useState([]);
-
-  useTracker("ProductList");
-
-  React.useEffect(function() {
-    const promise = makeTrashable(fetchProducts());
-    promise.then(res => {
-      setIsLoading(false);
-      setProducts(res);
-    });
-
-    return () => promise.trash();
-  }, []);
-
-  return <ProductList {...props} isLoading={isLoading} products={products} />;
 }

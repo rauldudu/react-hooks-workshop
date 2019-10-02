@@ -9,10 +9,10 @@ export function CartProvider({ children }) {
       setItems(prev => [...prev, { ...item }]);
     },
     deleteItem: id => {
-      setItems(prev => prev.filter(item => item.id !== id));
+      // TODO
     },
-    reset: id => {
-      setItems([]);
+    reset: () => {
+      // TODO
     }
   };
 
