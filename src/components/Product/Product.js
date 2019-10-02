@@ -10,9 +10,12 @@ import "./Product.scss";
 export default function Product({ id }) {
   const [isLoading, setIsLoading] = React.useState(true);
   const [product, setProduct] = React.useState([]);
-  const { actions } = React.useContext(CartContext);
+  const { items, actions } = React.useContext(CartContext);
+  const hasAddedToCart = items.some(
+    item => item.id.toString() === id.toString()
+  );
 
-  useTracker('Product');
+  useTracker("Product");
 
   React.useEffect(
     function() {
@@ -41,6 +44,7 @@ export default function Product({ id }) {
         <strong>Price:</strong> ${product.price}
       </p>
       <button
+        disabled={hasAddedToCart}
         onClick={() => {
           actions.addItem(product);
         }}

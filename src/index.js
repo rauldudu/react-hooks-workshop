@@ -15,7 +15,11 @@ ReactDOM.render(
     <CartProvider>
       <Router>
         <Header />
-        <Route path="/" exact component={() => <ProductList />} />
+        <Route
+          path="/"
+          exact
+          component={({ history }) => <ProductList history={history} />}
+        />
         <Route
           path="/product/:id"
           component={({ match, history }) => (

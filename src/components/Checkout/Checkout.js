@@ -8,7 +8,7 @@ import "./Checkout.scss";
 export default function Checkout() {
   useTracker("Checkout");
 
-  const { items } = React.useContext(CartContext);
+  const { items, actions } = React.useContext(CartContext);
   const total = useTotal();
 
   return (
@@ -23,16 +23,35 @@ export default function Checkout() {
               <tr>
                 <th>Product</th>
                 <th>Price</th>
+                <th></th>
               </tr>
               {items.map(item => (
                 <tr key={item.id}>
                   <td>{item.title}</td>
                   <td>${item.price}</td>
+                  <td>
+                    <button
+                      onClick={() => {
+                        // TODO
+                      }}
+                    >
+                      Delete
+                    </button>
+                  </td>
                 </tr>
               ))}
               <tr className="checkout__total" key="total">
                 <td></td>
                 <td>${total}</td>
+                <td>
+                <button
+                      onClick={() => {
+                        // TODO
+                      }}
+                    >
+                      Reset
+                    </button>
+                </td>
               </tr>
             </tbody>
           </table>

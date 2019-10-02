@@ -5,10 +5,14 @@ export const CartContext = React.createContext();
 export function CartProvider({ children }) {
   const [items, setItems] = React.useState([]);
   const actions = {
-    addItem: function(item) {
-      setItems(prev => {
-        return [...prev, { ...item }];
-      });
+    addItem: item => {
+      setItems(prev => [...prev, { ...item }]);
+    },
+    deleteItem: id => {
+      setItems(prev => prev.filter(item => item.id !== id));
+    },
+    reset: id => {
+      setItems([]);
     }
   };
 
