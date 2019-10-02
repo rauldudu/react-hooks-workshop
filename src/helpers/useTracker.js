@@ -1,7 +1,12 @@
 import React from "react";
 import saveActivity from "../api/saveActivity";
 
-// { page: page, type: "enter", date: new Date() }
 export default function useTracker(page) {
-  // TODO
+  React.useEffect(() => {
+    saveActivity({ page: page, type: "enter", date: new Date() });
+
+    return () => {
+      saveActivity({ page: page, type: "exit", date: new Date() });
+    };
+  }, []);
 }

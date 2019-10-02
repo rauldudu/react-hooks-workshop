@@ -6,9 +6,10 @@ import useTotal from "../../helpers/useTotal";
 import "./Checkout.scss";
 
 export default function Checkout() {
-  // TODO
-  const items = [];
-  const total = 0;
+  useTracker("Checkout");
+
+  const { items } = React.useContext(CartContext);
+  const total = useTotal();
 
   return (
     <div className="checkout">

@@ -6,9 +6,9 @@ import { Link } from "react-router-dom";
 import "./Header.scss";
 
 export default function Header() {
-  // TODO
-  const itemsCount = 0;
-  const total = 0;
+  const { items } = React.useContext(CartContext);
+  const itemsCount = items.length;
+  const total = useTotal();
 
   return (
     <header className="header">

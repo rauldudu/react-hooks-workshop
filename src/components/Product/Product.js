@@ -8,9 +8,26 @@ import fetchProduct from "../../api/fetchProduct";
 import "./Product.scss";
 
 export default function Product({ id }) {
-  // TODO
-  const isLoading = true;
-  const product = null;
+  const [isLoading, setIsLoading] = React.useState(true);
+  const [product, setProduct] = React.useState([]);
+  const { actions } = React.useContext(CartContext);
+
+  useTracker('Product');
+
+  React.useEffect(
+    function() {
+      const promise = makeTrashable(fetchProduct(id));
+      promise.then(res => {
+        setIsLoading(false);
+        setProduct(res);
+      });
+
+      return () => {
+        promise.trash();
+      };
+    },
+    [id]
+  );
 
   if (isLoading) {
     return <Spinner />;
@@ -25,7 +42,7 @@ export default function Product({ id }) {
       </p>
       <button
         onClick={() => {
-          // TODO
+          actions.addItem(product);
         }}
       >
         Add to Cart
